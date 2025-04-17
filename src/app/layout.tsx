@@ -1,16 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Henny_Penny, Lilita_One } from "next/font/google";
+import Providers from "./provider/Providers";
+import Navbar from "@/components/navbar";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  weight: ['400', '700'],
+  variable: "--font-poppins",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const liltaOne = Lilita_One({
+  weight: ["400"],
+  variable: "--font-lilita-one",
   subsets: ["latin"],
 });
+
+const hennyPenny = Henny_Penny({
+  weight: ["400"],
+  variable: "--font-Henny-Penny",
+  subsets: ["latin"],
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={cn(`antialiased`, poppins.className, hennyPenny.className, liltaOne.className)}>
+      <body>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
