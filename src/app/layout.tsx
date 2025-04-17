@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
 import { Poppins, Henny_Penny, Lilita_One } from "next/font/google";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+
+
 import Providers from "./provider/Providers";
 import Navbar from "@/components/navbar";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Footer } from "@/components/footer";
 
 const poppins = Poppins({
-  weight: ['400', '700'],
+  weight: ['400', '700', '200', '100', '300', '400'],
   variable: "--font-poppins",
   subsets: ["latin"],
 });
@@ -35,13 +46,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(`antialiased`, poppins.className, hennyPenny.className, liltaOne.className)}>
-      <body>
-        <Providers>
-          <Navbar />
-          {children}
-        </Providers>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={cn(`antialiased`, poppins.className,)}>
+        <body>
+          <Providers>
+            <div className="min-h-screen">
+
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider >
   );
 }
