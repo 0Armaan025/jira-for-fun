@@ -43,7 +43,7 @@ const Navbar = () => {
                                     <ul className="py-2">
                                         <li className="px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Profile</li>
                                         <li className="px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Settings</li>
-                                        <li className="px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Log Out</li>
+                                        <li className="px-4 py-2  dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-red-400">Log Out</li>
                                     </ul>
                                 </div>
                             )}

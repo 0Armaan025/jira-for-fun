@@ -1,9 +1,9 @@
 export const Footer = () => {
     return (
         <>
-            <div className="footer flex flex-row p-4 bg-none justify-center items-center border-t-[0.5px] border-t-gray-600">
-                <h3 className="text-xl">2025&copy; Jira for fun</h3>
-            </div>
+            <footer className="py-8 px-6 md:px-12 lg:px-20 text-center text-gray-600 dark:text-gray-400">
+                <p>© {new Date().getFullYear()} JiraFun • Built for learning purposes</p>
+            </footer>
         </>
     );
 }

@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Poppins, Henny_Penny, Lilita_One } from "next/font/google";
 import {
@@ -15,6 +16,8 @@ import Navbar from "@/components/navbar";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/components/footer";
+import { ThemeChangeBtn } from "@/components/theme-change-btn";
+import { useTheme } from "next-themes";
 
 const poppins = Poppins({
   weight: ['400', '700', '200', '100', '300', '400'],
@@ -45,6 +48,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
   return (
     <ClerkProvider>
       <html lang="en" className={cn(`antialiased`, poppins.className,)}>

@@ -7,22 +7,11 @@ import HomePage from "@/home/HomePage";
 
 export default function Home() {
 
-  const { resolvedTheme, theme, setTheme } = useTheme();
-
-  console.log(resolvedTheme);
-
-  const changeTheme = () => {
-    if (resolvedTheme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  }
 
 
   return (
     <>
-      <HomePage theme={resolvedTheme || ""} changeTheme={changeTheme} />
+      <HomePage />
     </>
   );
 }
